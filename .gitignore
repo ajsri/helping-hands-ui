@@ -1,0 +1,8 @@
+# IntelliJ
+*.iml
+/.idea/
+
+# Application
+/dist/
+/typings/
+/node_modules/

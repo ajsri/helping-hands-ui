@@ -8,14 +8,17 @@ import { Component, Input } from '@angular/core';
 export class EmploymentEducationComponent {
     @Input() data: any[];
     noHistory: boolean;
+    tableHidden: boolean = false;
+    toggleTable() {
+        this.tableHidden = !this.tableHidden
+    }
     eeHistory: any[];
-    constructor() {
-        if(this.data == null){
-            this.noHistory = true;
+    ngOnInit() {
+        if(this.data && this.data.length > 0){
+            this.noHistory = false;
         }
         else {
-            this.noHistory = false;
-            this.eeHistory = this.data;
+            this.noHistory = true;
         }
     }
 }

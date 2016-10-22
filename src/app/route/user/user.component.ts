@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 var mockdata = require('../../mockdata/users.json');
 var mockemployment = require('../../mockdata/ee.json');
+var mockdisabilities = require('../../mockdata/disabilities.json');
 
 @Component({
     selector: 'user',
@@ -16,8 +17,10 @@ export class UserComponent implements OnInit {
 
     mockdata = mockdata.clients
     mockemployment = mockemployment
+    mockdisabilities = mockdisabilities
     client: any
     employmentInfo: any
+    disabilityInfo: any
     sub: any
     uuid: any
 
@@ -30,6 +33,9 @@ export class UserComponent implements OnInit {
         })[0]
         this.employmentInfo = this.mockemployment.filter((client: any) => {
             return client.PersonalID.toString() == this.uuid
+        })
+        this.disabilityInfo = this.mockdisabilities.filter((client: any) => {
+            return client.PersonalID.toString() == this.uuid;
         })
     }
 

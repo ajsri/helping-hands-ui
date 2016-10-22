@@ -1,16 +1,19 @@
-div#userList
-    table.table
-        thead
-            tr
-                th User ID
-                th Name
-                th SSN
-                th Date Updated
-                th Date Created
-        tbody
-            tr.clickable(*ngFor="let client of data.clients", [routerLink]="['/user', client.UUID]")
-                td {{client.UUID}}
-                td {{client.First_Name}} {{client.Last_Name}}
-                td {{client.SSN}}
-                td {{client.Date_Created}}
-                td {{client.DateUpdated}}
+div#userList.card
+    div.card-header
+        h2 Client Listing
+    div.card-body
+        table.table.table-striped
+            thead
+                tr
+                    th User ID
+                    th Name
+                    th SSN
+                    th Date Updated
+                    th Date Created
+            tbody
+                tr.clickable(*ngFor="let client of data.clients", [routerLink]="['/user', client.UUID]")
+                    td {{client.UUID}}
+                    td {{client.First_Name}} {{client.Last_Name}}
+                    td {{client.SSN}}
+                    td {{client.Date_Created}}
+                    td {{client.DateUpdated}}

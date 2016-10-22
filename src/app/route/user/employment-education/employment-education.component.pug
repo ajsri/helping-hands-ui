@@ -1,19 +1,22 @@
 div.row.m-t-sm
     div.col-md-12
-        h4((click)="toggleTable()") Employment and Education History
-            i.material-icons.clickable.toggleTable([textContent]="tableHidden ? 'keyboard_arrow_up' : 'keyboard_arrow_down'")
-        em([hidden]="!noHistory") There are no employment or education records
-        div([hidden]="noHistory || tableHidden")
-            table.table.m-t-sm
-                thead
-                    tr
-                        th Information Date
-                        th Employed
-                        th Date Created
-                        th Date Updated
-                tbody
-                    tr(*ngFor="let record of data")
-                        td {{record.InformationDate}}
-                        td {{record.Employed ? "Employed" : "Unemployed"}}
-                        td {{record.DateCreated}}
-                        td {{record.DateUpdated}}
+        div.card
+            div.card-header
+                h4((click)="toggleTable()") Employment and Education History
+                    i.material-icons.clickable.toggleTable([textContent]="tableHidden ? 'keyboard_arrow_up' : 'keyboard_arrow_down'")
+            div.card-body
+                em([hidden]="!noHistory") There are no employment or education records
+                div([hidden]="noHistory || tableHidden")
+                    table.table.table-striped
+                        thead
+                            tr
+                                th Information Date
+                                th Employed
+                                th Date Created
+                                th Date Updated
+                        tbody
+                            tr(*ngFor="let record of data")
+                                td {{record.InformationDate}}
+                                td {{record.Employed ? "Employed" : "Unemployed"}}
+                                td {{record.DateCreated}}
+                                td {{record.DateUpdated}}

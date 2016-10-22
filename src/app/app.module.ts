@@ -9,6 +9,7 @@ import { UserList } from './route/userlist/userlist.component';
 import { UserComponent } from './route/user/user.component';
 import { EmploymentEducationComponent } from './route/user/employment-education/employment-education.component';
 import { DisabilitiesComponent } from './route/user/disabilities/disabilities.component'
+import { HealthandDVComponent } from './route/user/healthanddv/healthanddv.component'
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { DisabilitiesComponent } from './route/user/disabilities/disabilities.co
         UserList,
         UserComponent,
         EmploymentEducationComponent,
-        DisabilitiesComponent
+        DisabilitiesComponent,
+        HealthandDVComponent
     ],
     providers: [
         APP_ROUTING_PROVIDERS

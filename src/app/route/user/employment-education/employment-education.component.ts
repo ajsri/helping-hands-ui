@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class EmploymentEducationComponent {
     @Input() data: any[];
     noHistory: boolean;
-    tableHidden: boolean = false;
+    tableHidden: boolean = true;
     toggleTable() {
         this.tableHidden = !this.tableHidden
     }

@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core'
 export class DisabilitiesComponent {
     @Input() data: any[];
     noHistory: boolean;
-    tableHidden: boolean = false;
+    tableHidden: boolean = true;
     disabilityTypes = {
         5: 'Physical Disability',
         6: 'Developmental Disability',

@@ -5,6 +5,7 @@ import { UserService } from './user.service'
 var mockdata = require('../../mockdata/users.json');
 var mockemployment = require('../../mockdata/ee.json');
 var mockdisabilities = require('../../mockdata/disabilities.json');
+var mockhealth = require('../../mockdata/health.json');
 
 @Component({
     selector: 'user',
@@ -22,25 +23,31 @@ export class UserComponent implements OnInit {
     mockdata = mockdata.clients;
     mockemployment = mockemployment;
     mockdisabilities = mockdisabilities;
+    mockhealth = mockhealth;
     client: any;
     employmentInfo: any;
     disabilityInfo: any;
+    healthanddvInfo: any;
     sub: any;
     uuid: any;
 
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.uuid = params['id']
-        })
+        });
         this.client = this.mockdata.filter((client: any) => {
             return client.UUID == this.uuid;
-        })[0]
+        })[0];
         this.employmentInfo = this.mockemployment.filter((client: any) => {
             return client.PersonalID.toString() == this.uuid
-        })
+        });
         this.disabilityInfo = this.mockdisabilities.filter((client: any) => {
             return client.PersonalID.toString() == this.uuid;
-        })
+        });
+        this.healthanddvInfo = this.mockhealth.filter((client: any) => {
+            return client.PersonalID.toString() == this.uuid;
+        });
+        console.log(this.healthanddvInfo)
     }
 
 

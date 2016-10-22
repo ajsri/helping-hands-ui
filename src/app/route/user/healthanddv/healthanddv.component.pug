@@ -2,7 +2,7 @@ div.row.m-t-sm
     div.col-md-12
         div.card
             div.card-header
-                h4((click)="toggleTable()") Disability History
+                h4((click)="toggleTable()") Health and Domestic Violence History
                     i.material-icons.clickable.toggleTable([textContent]="tableHidden ? 'keyboard_arrow_up' : 'keyboard_arrow_down'")
             div.card-body
                 em([hidden]="!noHistory") There are no employment or education records
@@ -10,17 +10,13 @@ div.row.m-t-sm
                     table.table.table-striped
                         thead
                             tr
-                                th Incident Date
-                                th Disability Type
-                                th Disability Response
-                                th Collection Stage
+                                th Information Date
+                                th Employed
                                 th Date Created
                                 th Date Updated
                         tbody
                             tr(*ngFor="let record of data")
                                 td {{record.InformationDate}}
-                                td {{disabilityTypes[record.DisabilityType]}}
-                                td {{disabilityResponse[record.DisabilityResponse]}}
-                                td {{dataCollectionStage[record.DataCollectionStage]}}
+                                td {{record.Employed ? "Employed" : "Unemployed"}}
                                 td {{record.DateCreated}}
                                 td {{record.DateUpdated}}

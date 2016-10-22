@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from "@angular/platform-browser";
 
 import { ROUTING, APP_ROUTING_PROVIDERS } from "./route/app.routing";
@@ -12,7 +13,8 @@ import { DisabilitiesComponent } from './route/user/disabilities/disabilities.co
 @NgModule({
     imports: [
         BrowserModule,
-        ROUTING
+        ROUTING,
+        HttpModule
     ],
     declarations: [
         AppComponent,

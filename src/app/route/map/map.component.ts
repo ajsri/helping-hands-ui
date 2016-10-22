@@ -7,16 +7,18 @@ import { Component, OnInit } from '@angular/core'
 })
 
 export class MapComponent extends OnInit {
-    
+
     map: any;
+    points: any[];
+    vm: any;
 
     ngOnInit() {
         var m = document.getElementById('mapContainer');
+        var vm = this;
 
         this.map = L.map(m, {
             center: L.latLng(38.636, -90.248),
-            zoom: 16,
-            dragging: false
+            zoom: 16
         });
 
         var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png?', {
@@ -24,15 +26,11 @@ export class MapComponent extends OnInit {
             maxZoom: 18,
         });
 
-
+        L.marker([38.636, -90.248]).addTo(this.map);
         tileLayer.addTo(this.map);
 
-        // this.map = new L.map(m,
-        //     {drawControl: true})
-        //     .setView([38.6362117,-90.2489548], 16);
-        //
-        // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        //     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        // }).addTo(this.map);
+        this.map.on('click', (e: any) => {
+            L.marker([e.latlng.lat, e.latlng.lng]).addTo(this.map);
+        });
     }
 }

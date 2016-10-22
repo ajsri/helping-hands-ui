@@ -1,0 +1,18 @@
+div.row.m-t-sm
+    div.col-md-12
+        h4 Employment and Education History
+        em([hidden]="!noHistory") There are no employment or education records
+        div([hidden]="noHistory")
+            table.table
+                thead
+                    tr
+                        th Information Date
+                        th Employed
+                        th Date Created
+                        th Date Updated
+                tbody
+                    tr(*ngFor="let record of data")
+                        td {{record.InformationDate}}
+                        td {{record.Employed ? "Employed" : "Unemployed"}}
+                        td {{record.DateCreated}}
+                        td {{record.DateUpdated}}

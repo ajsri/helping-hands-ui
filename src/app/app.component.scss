@@ -15,3 +15,31 @@ html, body, table, thead, tbody, tr, th, td, hr, h1, h2, h3, h4, h5, h6 {
 .m-t-sm {
 	margin-top: 1em;
 }
+
+.clickable {
+	cursor: pointer;
+}
+
+.userPhoto {
+	width: 128px;
+	height: 128px;
+	min-width: 128px;
+	min-height: 128px;
+	background: #eee;
+	border-radius: 50%;
+	border: 6px solid #bbb;
+	background: url('http://americanmuslimconsumer.com/wp-content/uploads/2013/09/blank-user.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.userInformation label {
+	font-weight: 700;
+	display: block;
+}
+
+.userInformation span {
+	display: block;
+	margin-bottom: 0.5rem;
+}

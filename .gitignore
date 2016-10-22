@@ -4,7 +4,6 @@
 
 # Application
 /dist/
-/typings/
 /node_modules/
 npm-debug.log
 .DS_Store

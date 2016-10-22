@@ -10,10 +10,11 @@ export class EmploymentEducationComponent {
     noHistory: boolean;
     eeHistory: any[];
     constructor() {
-        if(this.data && this.data.length > 1){
-            this.noHistory = false
+        if(this.data == null){
+            this.noHistory = true;
         }
         else {
+            this.noHistory = false;
             this.eeHistory = this.data;
         }
     }

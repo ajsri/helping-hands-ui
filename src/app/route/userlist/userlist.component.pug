@@ -8,7 +8,7 @@ div#userList
                 th Date Updated
                 th Date Created
         tbody
-            tr.clickable(*ngFor="let client of data.clients", (click)="debug(client.UUID)", [routerLink]="['/user', client.UUID]")
+            tr.clickable(*ngFor="let client of data.clients", [routerLink]="['/user', client.UUID]")
                 td {{client.UUID}}
                 td {{client.First_Name}} {{client.Last_Name}}
                 td {{client.SSN}}

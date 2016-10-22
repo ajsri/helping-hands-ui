@@ -9,9 +9,6 @@ var mocks = require('../../mockdata/users.json');
 
 export class UserList {
     data = mocks
-    debug(uid: any) {
-        console.log(uid)
-    }
     public constructor(){
 
     }

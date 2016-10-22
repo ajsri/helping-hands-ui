@@ -7,5 +7,7 @@ import { Component } from '@angular/core'
 })
 
 export class MapComponent {
-    constructor() { }
+    constructor() {
+        console.log(L)
+    }
 }

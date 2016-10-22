@@ -5,6 +5,7 @@ import { ROUTING, APP_ROUTING_PROVIDERS } from "./route/app.routing";
 import { AppComponent } from "./app.component";
 import { IndexComponent } from "./route/index/index.component";
 import { UserList } from './route/userlist/userlist.component';
+import { UserComponent } from './route/user/user.component';
 
 @NgModule({
     imports: [
@@ -14,7 +15,8 @@ import { UserList } from './route/userlist/userlist.component';
     declarations: [
         AppComponent,
         IndexComponent,
-        UserList
+        UserList,
+        UserComponent
     ],
     providers: [
         APP_ROUTING_PROVIDERS

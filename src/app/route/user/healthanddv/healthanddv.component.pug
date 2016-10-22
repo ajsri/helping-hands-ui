@@ -11,12 +11,12 @@ div.row.m-t-sm
                         thead
                             tr
                                 th Information Date
-                                th Employed
+                                th Domestic Violence Victim
                                 th Date Created
                                 th Date Updated
                         tbody
                             tr(*ngFor="let record of data")
                                 td {{record.InformationDate}}
-                                td {{record.Employed ? "Employed" : "Unemployed"}}
+                                td {{record.DomesticViolenceVictim ? "True" : "False"}}
                                 td {{record.DateCreated}}
                                 td {{record.DateUpdated}}

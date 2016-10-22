@@ -8,8 +8,9 @@ import { IndexComponent } from "./route/index/index.component";
 import { UserList } from './route/userlist/userlist.component';
 import { UserComponent } from './route/user/user.component';
 import { EmploymentEducationComponent } from './route/user/employment-education/employment-education.component';
-import { DisabilitiesComponent } from './route/user/disabilities/disabilities.component'
-import { HealthandDVComponent } from './route/user/healthanddv/healthanddv.component'
+import { DisabilitiesComponent } from './route/user/disabilities/disabilities.component';
+import { HealthandDVComponent } from './route/user/healthanddv/healthanddv.component';
+import { MapComponent } from './route/map/map.component';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { HealthandDVComponent } from './route/user/healthanddv/healthanddv.compo
         UserComponent,
         EmploymentEducationComponent,
         DisabilitiesComponent,
-        HealthandDVComponent
+        HealthandDVComponent,
+        MapComponent
     ],
     providers: [
         APP_ROUTING_PROVIDERS

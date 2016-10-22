@@ -9,6 +9,6 @@ export class HealthandDVComponent {
     @Input() data: any[];
     tableHidden: boolean = true;
     toggleTable() {
-        this.tableHidden != this.tableHidden;
+        this.tableHidden = !this.tableHidden;
     }
 }

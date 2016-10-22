@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IndexComponent } from "./index/index.component";
 import { UserComponent } from './user/user.component';
+import { MapComponent } from './map/map.component';
 
 const APP_ROUTES: Routes = [
     {
@@ -12,6 +13,10 @@ const APP_ROUTES: Routes = [
     {
         path: 'user/:id',
         component: UserComponent
+    },
+    {
+        path: 'map',
+        component: MapComponent
     }
 ];
 

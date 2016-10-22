@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'mopar-app',
+    selector: 'ph-app',
     template: require('./app.component.pug'),
     styleUrls: [ './app.component.scss' ],
     encapsulation: ViewEncapsulation.None

@@ -48,6 +48,11 @@ module.exports = {
                 test: /\.css$/,
                 include: helpers.root('src', 'app'),
                 loader: 'raw'
+            },
+            {
+                test: /\.json$/,
+                exclude: /node_modules/,
+                loader: 'json'
             }
         ]
     },

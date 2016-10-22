@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "mopar-index",
-    template: "hi there!"
+    selector: "ph-index",
+    templateUrl: "./index.component.pug"
 })
 export class IndexComponent {
 

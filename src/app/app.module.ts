@@ -4,6 +4,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { ROUTING, APP_ROUTING_PROVIDERS } from "./route/app.routing";
 import { AppComponent } from "./app.component";
 import { IndexComponent } from "./route/index/index.component";
+import { UserList } from './route/userlist/userlist.component';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { IndexComponent } from "./route/index/index.component";
     ],
     declarations: [
         AppComponent,
-        IndexComponent
+        IndexComponent,
+        UserList
     ],
     providers: [
         APP_ROUTING_PROVIDERS

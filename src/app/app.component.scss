@@ -39,7 +39,7 @@ html, body, table, thead, tbody, tr, th, td, hr, h1, h2, h3, h4, h5, h6 {
 	display: block;
 }
 
-.userInformation span {
+.userInformation span, .shelterInfo span {
 	display: block;
 	margin-bottom: 0.5rem;
 }
@@ -75,11 +75,11 @@ html, body, table, thead, tbody, tr, th, td, hr, h1, h2, h3, h4, h5, h6 {
 	top: 9px;
 }
 
-a, a:active, a:focus{
+a.navbar-link, a.navbar-link:active, a.navbar-link:focus{
 	color: #fff;
 	margin-right: 1em;
 }
 
-a:hover {
+a.navbar-link:hover {
 	color: #eee;
 }

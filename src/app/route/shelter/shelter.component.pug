@@ -1,0 +1,39 @@
+div.container.m-t-sm
+    div.row.m-t-sm
+        div.col-md-12
+            h1 Shelter Details
+            h2 {{shelter.name}}
+    div.row.m-t-sm
+        div.col-md-12.shelterInfo
+            span {{shelter.address}}
+            span {{shelter.phone}}
+            span
+                a([href]="shelter.url") Website
+    div.row.m-t-sm
+        div.col-md-12
+            h2 Shelter Availability
+            p do this eventually
+    div.row.m-t-sm
+        div.col-md-12
+            h2 Services
+            div.row.m-t-sm
+                div.col-md-4.shelterInfo
+                    span Clothing: {{shelter.clothing == 1 ? 'Yes' : 'No'}}
+                    span Community Services: {{shelter.community_services == 1 ? 'Yes' : 'No'}}
+                    span Counseling: {{shelter.counseling == 1 ? 'Yes' : 'No'}}
+                    span Education: {{shelter.education == 1 ? 'Yes' : 'No'}}
+                    span Emergency Shelter: {{shelter.emergency_shelter == 1 ? 'Yes' : 'No'}}
+                    span Employment Assistance: {{shelter.employment_assistance == 1 ? 'Yes' : 'No'}}
+                    span Food: {{shelter.food == 1 ? 'Yes' : 'No'}}
+                div.col-md-4.shelterInfo
+                    span Healthcare: {{shelter.healthcare == 1 ? 'Yes' : 'No'}}
+                    span Housing Assistance: {{shelter.housing_assistance == 1 ? 'Yes' : 'No'}}
+                    span Hygiene Essentials: {{shelter.hygiene_essentials == 1 ? 'Yes' : 'No'}}
+                    span Legal Assistance: {{shelter.legal == 1 ? 'Yes' : 'No'}}
+                    span Transportation: {{shelter.transportation == 1 ? 'Yes' : 'No'}}
+                    span Utility Assistance: {{shelter.utility_assistance == 1 ? 'Yes' : 'No'}}
+
+
+    div.col-md-6.shelterINfo
+
+

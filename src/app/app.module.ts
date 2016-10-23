@@ -11,6 +11,9 @@ import { EmploymentEducationComponent } from './route/user/employment-education/
 import { DisabilitiesComponent } from './route/user/disabilities/disabilities.component';
 import { HealthandDVComponent } from './route/user/healthanddv/healthanddv.component';
 import { MapComponent } from './route/map/map.component';
+import { ShelterComponent } from './route/shelter/shelter.component';
+import { ShelterDetailComponent } from './route/map/shelter.component';
+
 
 @NgModule({
     imports: [
@@ -26,7 +29,9 @@ import { MapComponent } from './route/map/map.component';
         EmploymentEducationComponent,
         DisabilitiesComponent,
         HealthandDVComponent,
-        MapComponent
+        MapComponent,
+        ShelterComponent,
+        ShelterDetailComponent
     ],
     providers: [
         APP_ROUTING_PROVIDERS

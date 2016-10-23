@@ -13,14 +13,15 @@ export class MapComponent extends OnInit {
     services = services;
     map: any;
     points: any[];
-    vm: any;
+    vm = this;
 
     buildMap() {
 
     }
+
     ngOnInit() {
         var m = document.getElementById('mapContainer');
-        var vm = this;
+        var vm = this.vm;
 
         this.map = L.map(m, {
             center: L.latLng(38.6439633,-90.2565238),
@@ -29,14 +30,18 @@ export class MapComponent extends OnInit {
 
         var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png?', {
             minZoom: 3,
-            maxZoom: 18,
+            maxZoom: 10,
         });
 
         this.services.map((service: any, i: number) => {
-            var lat = (service.lat);
-            var lon = (service.lon);
-            var content = `<div class="popup-content-svc">
+            var lat = service.lat;
+            var lon = service.lon;
+            var content = ` <shelter-detail></shelter-detail>
+                            <div class="popup-content-svc">
                                 <p><strong>${service.name}</strong></p>
+                                <p class="clickable">
+                                    <a href="/shelter/${service.id}">Check Room Availability</a>
+                                </p>
                                 <p>${service.address}</p>
                                 <p>${service.phone}</p>
                                 <p><strong>Services</strong></p>

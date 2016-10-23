@@ -13,9 +13,11 @@ div.container
                             th Date Updated
                             th Date Created
                     tbody
-                        tr.clickable(*ngFor="let client of data.clients", [routerLink]="['/user', client.UUID]")
-                            td {{client.UUID}}
-                            td {{client.First_Name}} {{client.Last_Name}}
-                            td {{client.SSN}}
-                            td {{client.Date_Created}}
-                            td {{client.DateUpdated}}
+                        tr([hidden]="!_loading")
+                            td(colspan=5 style="text-align: center;") Loading, please wait
+                        tr.clickable(*ngFor="let client of data", [routerLink]="['/user', client.uuid]", [hidden]="data.length < 1")
+                            td {{client.uuid}}
+                            td {{client.firstName}} {{client.lastName}}
+                            td {{client.ssn}}
+                            td {{client.dateCreated}}
+                            td {{client.dateUpdated}}

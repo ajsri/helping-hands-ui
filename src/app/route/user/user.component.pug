@@ -1,8 +1,8 @@
-div.container
+div.container([hidden]="loading")
     div.row
         div.col-md-12.m-t-sm
             h1 Client Details
-            h2 {{client.First_Name}} {{client.Middle_Name}} {{client.Last_Name}}
+            h2 {{client.firstName}} {{client.middleName}} {{client.lastName}}
     div.row.m-t-sm
         div.col-md-2
             div.userPhoto
@@ -15,11 +15,9 @@ div.container
                     label Date Created:
                     label Date Modified:
                 div.col-md-10
-                    span {{client.SSN}}
-                    span {{client.DOB}}
-                    span {{client.Date_Created}}
-                    span {{client.DateUpdated}}
+                    span {{client.ssn}}
+                    span {{client.dob}}
+                    span {{client.dateCreated}}
+                    span {{client.dateUpdated}}
 
-    employment-education([data]="employmentInfo")
     disabilities([data]="disabilityInfo")
-    healthanddv([data]="healthanddvInfo")

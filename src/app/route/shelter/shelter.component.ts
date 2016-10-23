@@ -10,13 +10,14 @@ var shelters = require('../../mockdata/services.json');
 })
 
 export class ShelterComponent implements OnInit{
-    constructor(public route: ActivatedRoute, public router: Router) {
 
+    constructor(public route: ActivatedRoute, public router: Router) {
     }
     shelters = shelters;
     shelter: any;
     shelterId: any;
     sub: any;
+
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.shelterId = params['id']

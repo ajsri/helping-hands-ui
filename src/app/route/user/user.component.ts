@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from './user.service'
 
@@ -16,38 +16,27 @@ var mockhealth = require('../../mockdata/health.json');
 export class UserComponent implements OnInit {
 
     constructor(public route: ActivatedRoute, public router: Router, private userService: UserService) {
-
+       this.loading = true;
     }
 
-    //get mock data, employment, disabilities
-    mockdata = mockdata.clients;
-    mockemployment = mockemployment;
-    mockdisabilities = mockdisabilities;
-    mockhealth = mockhealth;
-    client: any;
-    employmentInfo: any;
+    @Input() client: Object = {};
+    loading: boolean = true;
     disabilityInfo: any;
-    healthanddvInfo: any;
     sub: any;
     uuid: any;
 
+    buildUserPage(response: any) {
+        this.client = response;
+        this.loading = false;
+        console.log(this.client);
+    }
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             this.uuid = params['id']
         });
-        this.client = this.mockdata.filter((client: any) => {
-            return client.UUID == this.uuid;
-        })[0];
-        this.employmentInfo = this.mockemployment.filter((client: any) => {
-            return client.PersonalID.toString() == this.uuid
+        this.userService.getUserDetails(this.uuid).then(response => {
+            this.buildUserPage(response)
         });
-        this.disabilityInfo = this.mockdisabilities.filter((client: any) => {
-            return client.PersonalID.toString() == this.uuid;
-        });
-        this.healthanddvInfo = this.mockhealth.filter((client: any) => {
-            return client.PersonalID.toString() == this.uuid;
-        });
-        console.log(this.healthanddvInfo)
     }
 
 

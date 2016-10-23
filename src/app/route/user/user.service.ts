@@ -5,8 +5,8 @@ import { Http } from '@angular/http';
 export class UserService {
     public constructor(private http: Http) { }
 
-    public getUserDetails() {
-        var userUrl = 'placeholder'
+    public getUserDetails(id: any) {
+        var userUrl = `http://52.87.121.117:8080/api/client/getClient?id=${id}`
         return this.http.get(userUrl)
             .toPromise()
             .then(response => response.json())

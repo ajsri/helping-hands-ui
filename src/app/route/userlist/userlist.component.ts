@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserlistService } from './userlist.service';
 
 var mocks = require('../../mockdata/users.json');
@@ -11,10 +11,11 @@ var mocks = require('../../mockdata/users.json');
 })
 
 export class UserList implements OnInit {
-    data = mocks
+    @Input() data: any[] = [];
+    _loading: boolean;
 
     public constructor(private userListService: UserlistService){
-
+        this.data.length < 1 ? this._loading = true : this._loading = false;
     }
 
     userList: any[]
@@ -25,6 +26,7 @@ export class UserList implements OnInit {
     }
 
     public buildUserList(data: any[]) {
-        this.userList = data;
+        this.data = data;
+        this._loading = false;
     }
 }

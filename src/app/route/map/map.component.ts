@@ -15,10 +15,6 @@ export class MapComponent extends OnInit {
     points: any[];
     vm = this;
 
-    buildMap() {
-
-    }
-
     ngOnInit() {
         var m = document.getElementById('mapContainer');
         var vm = this.vm;
@@ -32,6 +28,7 @@ export class MapComponent extends OnInit {
             minZoom: 3,
             maxZoom: 30,
         });
+
 
         this.services.map((service: any, i: number) => {
             var lat = service.lat;
@@ -59,7 +56,13 @@ export class MapComponent extends OnInit {
                                 <p>${service.transportation == 1 ? 'Transportation' : ''}</p>
                                 <p>${service.utility_assistance == 1 ? 'Utility Assistance' : ''}</p>
                            </div>`
-            L.marker([lat, lon]).bindPopup(content).openPopup().addTo(this.map);
+            L.marker([lat, lon])
+                .bindPopup(content)
+                .openPopup()
+                .addTo(this.map)
+                .on('click', (e: any) => {
+                    this.map.setView([e.latlng.lat, e.latlng.lng])
+                });
         })
         tileLayer.addTo(this.map);
         if(navigator.geolocation) {

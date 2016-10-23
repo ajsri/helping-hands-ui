@@ -69,3 +69,17 @@ html, body, table, thead, tbody, tr, th, td, hr, h1, h2, h3, h4, h5, h6 {
 .leaflet-top {
 	top: 64px;
 }
+
+.navbar-link {
+	position: relative;
+	top: 9px;
+}
+
+a, a:active, a:focus{
+	color: #fff;
+	margin-right: 1em;
+}
+
+a:hover {
+	color: #eee;
+}

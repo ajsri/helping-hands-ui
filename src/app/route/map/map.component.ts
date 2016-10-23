@@ -15,6 +15,9 @@ export class MapComponent extends OnInit {
     points: any[];
     vm: any;
 
+    buildMap() {
+
+    }
     ngOnInit() {
         var m = document.getElementById('mapContainer');
         var vm = this;
@@ -54,5 +57,12 @@ export class MapComponent extends OnInit {
             L.marker([lat, lon]).bindPopup(content).openPopup().addTo(this.map);
         })
         tileLayer.addTo(this.map);
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                this.map.setView([position.coords.latitude, position.coords.longitude])
+                var content = 'Current Position'
+                L.marker([position.coords.latitude, position.coords.longitude]).addTo(vm.map)
+            })
+        }
     }
 }

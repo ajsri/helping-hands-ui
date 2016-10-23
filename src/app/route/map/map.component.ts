@@ -30,7 +30,7 @@ export class MapComponent extends OnInit {
 
         var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png?', {
             minZoom: 3,
-            maxZoom: 10,
+            maxZoom: 30,
         });
 
         this.services.map((service: any, i: number) => {

@@ -15,9 +15,9 @@ div.container([hidden]="loading")
                     label Date Created:
                     label Date Modified:
                 div.col-md-10
-                    span {{client.ssn}}
-                    span {{client.dob}}
-                    span {{client.dateCreated}}
-                    span {{client.dateUpdated}}
+                    span {{client.ssn ? client.ssn : 'NO DATA'}}
+                    span {{client.dob ? client.dob : 'NO DATA'}}
+                    span {{client.dateCreated ? client.dateCreated : 'NO DATA'}}
+                    span {{client.dateUpdated ? client.dateUpdated : 'NO DATA'}}
 
     disabilities([data]="disabilityInfo")

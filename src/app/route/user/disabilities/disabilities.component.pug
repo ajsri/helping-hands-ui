@@ -5,9 +5,9 @@ div.row.m-t-sm
                 h4((click)="toggleTable()") Disability History
                     i.material-icons.clickable.toggleTable([textContent]="tableHidden ? 'keyboard_arrow_up' : 'keyboard_arrow_down'")
             div.card-body
-                em([hidden]="!noHistory") There are no disability records
-                div([hidden]="noHistory || tableHidden")
-                    table.table.table-striped
+                div([hidden]="tableHidden")
+                    em.no-results([hidden]="!noHistory") There are no disability records for {{client.firstName + ' ' + client.lastName}}
+                    table.table.table-striped([hidden]="noHistory")
                         thead
                             tr
                                 th Incident Date

@@ -20,4 +20,4 @@ div.container([hidden]="loading")
                     span {{client.dateCreated ? client.dateCreated : 'NO DATA'}}
                     span {{client.dateUpdated ? client.dateUpdated : 'NO DATA'}}
 
-    disabilities([data]="disabilityInfo")
+    disabilities([data]="disabilityInfo", [client]="client")

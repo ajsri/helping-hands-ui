@@ -28,7 +28,6 @@ export class UserComponent implements OnInit {
     buildUserPage(response: any) {
         this.client = response;
         this.loading = false;
-        console.log(this.client);
     }
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
